@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Vidly.Models.Customer>
+
+@{
+    ViewBag.Title = "Customers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Lista clienti</h2>
+
+@if (!Model.Any())
+{
+    // se non è mai stata noleggiata
+    <p>nessun cliente ha noleggiatio il film prima</p>
+}
+else
+{
+
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Clienti</th>
+                <th>Sconto</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var c in Model)
+            {
+                <tr>
+                    <td><a href='Edit?id=@c.Id'>@c.Name</a></td>
+                    <td>@c.MembershipType.DiscountRate%</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+}
