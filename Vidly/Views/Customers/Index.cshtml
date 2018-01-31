@@ -19,7 +19,7 @@ else
         <thead>
             <tr>
                 <th>Clienti</th>
-                <th>Sconto</th>
+                <th>Tipo Noleggio</th>
             </tr>
         </thead>
 
@@ -28,7 +28,7 @@ else
             {
                 <tr>
                     <td><a href='Edit?id=@c.Id'>@c.Name</a></td>
-                    <td>@c.MembershipType.DiscountRate%</td>
+                    <td>@c.MembershipType.Name</td>
                 </tr>
             }
         </tbody>
